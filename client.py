@@ -1,6 +1,7 @@
 import argparse
 import sys
 import struct
+import socket
 
 
 ###########################################################
@@ -15,7 +16,10 @@ def send_data(server_ip, server_port, data: str):
     data = data.encode()
     format = f'<i {len(data)}s'
     msg = struct.pack(format, len(data), data)
-    print(msg)
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as soc:
+        soc.connect((server_ip, server_port))
+        soc.sendall(msg)
+
 
 ###########################################################
 ##################### END OF YOUR CODE ####################
