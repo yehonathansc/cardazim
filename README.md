@@ -1,4 +1,3 @@
-# Template-Repository
+# yehonathans cardazim
 
-This is a template for the Cardazim Project!
-Feel free to look around for interesting stuff!
+This is not a template for the Cardazim Project!
